@@ -1,11 +1,8 @@
 package br.com.fiap.compraonline.entities;
 
-import br.com.fiap.compraonline.exceptions.PagamentoException;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
 
 
 public class CartaoCredito extends Pagamento {
@@ -60,7 +57,7 @@ public class CartaoCredito extends Pagamento {
     // MÉTODO HERDADO
 
     @Override
-    public boolean processarPagamento() throws PagamentoException {
+    public boolean processarPagamento() throws PagamentoException{
         System.out.println("\n🔹 Processando pagamento via Cartão de Crédito...");
         if (numero.length() == 16 && cvv >= 100 && cvv <= 999) {
             status = "Aprovado";
