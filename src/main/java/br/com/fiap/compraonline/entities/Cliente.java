@@ -1,14 +1,16 @@
 package br.com.fiap.compraonline.entities;
 
+import br.com.fiap.compraonline.dao.Conexao;
+import br.com.fiap.compraonline.dao.PagamentoDAOImpl;
+import br.com.fiap.compraonline.exceptions.PagamentoException;
+
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import br.com.restaurante.pagamento.dao.Conexao;
-import br.com.restaurante.pagamento.dao.PagamentoDAOImpl;
-import br.com.restaurante.pagamento.exception.PagamentoException;
+
 
 public class Cliente {
 
@@ -38,7 +40,7 @@ public class Cliente {
     }
 
 
-    public void realizarPagamento(Pagamento pagamento) throws PagamentoException  {
+    public void realizarPagamento(Pagamento pagamento) throws PagamentoException {
 
         if (pagamento.processarPagamento()) {
             pagamentos.add(pagamento);
