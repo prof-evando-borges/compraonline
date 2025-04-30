@@ -4,11 +4,11 @@ package br.com.fiap.compraonline.entities;
 public class Compra {
     private int id;
     private double valor;
-    private Usuario usuario;
-    private CartaoDeCredito cartao;
-    private CompraDAO compraDAO = new CompraDAO();
+   // private Usuario usuario;
+   // private CartaoDeCredito cartao;
+   // private CompraDAO compraDAO = new CompraDAO();
 
-    public boolean confirmarCompra(int cvv) {
+   /* public boolean confirmarCompra(int cvv) {
         return this.cartao.getCvv() == cvv;
     }
 
@@ -25,15 +25,15 @@ public class Compra {
 
         Compra compra = new Compra(id, valor, usuario, cartao);
         compraDAO.salvarCompraDAO(compra);
-    }
+    }*/
 
-    public Compra(int id, double valor, Usuario usuario, CartaoDeCredito cartao) {
+   /* public Compra(int id, double valor, Usuario usuario, CartaoDeCredito cartao) {
         super();
         this.id = id;
         this.valor = valor;
         this.usuario = usuario;
         this.cartao = cartao;
-    }
+    }*/
 
 
     public Compra() {
@@ -52,19 +52,5 @@ public class Compra {
         this.valor = valor;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
-    }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
-    }
-
-    public CartaoDeCredito getCartao() {
-        return cartao;
-    }
-
-    public void setCartao(CartaoDeCredito cartao) {
-        this.cartao = cartao;
-    }
 }
