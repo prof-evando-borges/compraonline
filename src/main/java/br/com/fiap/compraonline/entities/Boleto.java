@@ -12,7 +12,7 @@ public class Boleto extends Pagamento {
         super(valor, idCliente, tipoPagamento);
     }
 
-    @Override
+   // @Override
     public boolean processarPagamento() throws PagamentoException {
 
         if (valor <= 0) {
