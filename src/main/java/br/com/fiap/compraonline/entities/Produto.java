@@ -1,6 +1,9 @@
 package br.com.fiap.compraonline.entities;
 
+import java.util.Random;
+
 public class Produto {
+    private int id;
     private String nome;
     private String marca;
     private String desricao;
@@ -10,12 +13,21 @@ public class Produto {
 
     public Produto(String nome, String marca, String descricao, int numeroSerial, double  preco, int quant) {
         super();
+        this.id = gerarIdUnico();
         this.nome = nome;
         this.marca = marca;
         this.desricao = descricao;
         this.numeroSerial = numeroSerial;
         this.preco = preco;
         this.quant = quant;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id= id;
     }
 
     public String getNome() {
@@ -64,5 +76,10 @@ public class Produto {
 
     public void setQuant(int quant) {
         this.quant = quant;
+    }
+
+    private int gerarIdUnico() {
+        Random random = new Random();
+        return 10000000 + random.nextInt(90000000);
     }
 }
