@@ -1,5 +1,7 @@
 package br.com.fiap.compraonline.entities;
 
+import br.com.fiap.compraonline.exceptions.PagamentoException;
+
 import java.util.UUID;
 
 
@@ -12,7 +14,7 @@ public class Pix extends Pagamento {
     }
 
     @Override
-    public boolean processarPagamento() throws PagamentoException{
+    public boolean processarPagamento() throws PagamentoException {
 
         if (valor <= 0) {
             throw new PagamentoException("❌ O valor do pagamento está inválido!");
