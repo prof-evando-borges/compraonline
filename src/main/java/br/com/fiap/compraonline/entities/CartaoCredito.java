@@ -1,12 +1,9 @@
 package br.com.fiap.compraonline.entities;
 
 import br.com.fiap.compraonline.exceptions.PagamentoException;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
-
 
 public class CartaoCredito extends Pagamento {
 
@@ -17,8 +14,8 @@ public class CartaoCredito extends Pagamento {
     private int cvv;
     private static List<CartaoCredito> cartoesSalvos = new ArrayList<>();
 
-    public CartaoCredito(double valor, String nomeImpresso, String numero, String validade, int cvv, int idCliente, int tipoPagamento) {
-        super(valor, idCliente, tipoPagamento);
+    public CartaoCredito(double valor, String nomeImpresso, String numero, String validade, int cvv, int idCliente, int tipoPagamento) throws PagamentoException {
+        super(valor, idCliente, 1);
         this.idCartaoCredito = gerarIdUnico();
         this.nomeImpresso = nomeImpresso;
         this.numero = numero;
@@ -27,13 +24,11 @@ public class CartaoCredito extends Pagamento {
         this.idCliente = idCliente;
     }
 
-    public CartaoCredito(double valor, int idCliente, int tipoPagamento) {
-        super(valor, idCliente, tipoPagamento);
+    public CartaoCredito(double valor, int idCliente) throws PagamentoException {
+        super(valor, idCliente, 1);
     }
 
-
     // SALVAR CARTÃO
-
     public static void adicionarCartao(CartaoCredito cartao) {
         cartoesSalvos.add(cartao);
         System.out.println("\n✅ Cartão salvo com sucesso!\n");

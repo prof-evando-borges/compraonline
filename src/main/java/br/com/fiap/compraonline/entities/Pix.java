@@ -1,5 +1,6 @@
 package br.com.fiap.compraonline.entities;
 
+import br.com.fiap.compraonline.exceptions.PagamentoException;
 import java.util.UUID;
 
 
@@ -7,12 +8,12 @@ public class Pix extends Pagamento {
 
     private String codigoPagamento;
 
-    public Pix(double valor, int idCliente, int tipoPagamento) {
-        super(valor, idCliente, tipoPagamento);
+    public Pix(double valor, int idCliente) throws PagamentoException {
+        super(valor, idCliente, 2);
     }
 
     @Override
-    public boolean processarPagamento() throws PagamentoException{
+    public boolean processarPagamento() throws PagamentoException {
 
         if (valor <= 0) {
             throw new PagamentoException("❌ O valor do pagamento está inválido!");
@@ -29,9 +30,7 @@ public class Pix extends Pagamento {
 
             status = "Aguardando Pagamento\n\n";
             return true;
-
         }
-
     }
 
     private String gerarCodigoPix() {
@@ -41,7 +40,6 @@ public class Pix extends Pagamento {
     public String getCodigoPagamento() {
         return codigoPagamento;
     }
-
     public void setCodigoPagamento(String codigoPagamento) {
         this.codigoPagamento = codigoPagamento;
     }

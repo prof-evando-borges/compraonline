@@ -1,19 +1,21 @@
 package br.com.fiap.compraonline.entities;
 
 
+import br.com.fiap.compraonline.exceptions.CompraException;
+
 public class Compra {
     private int id;
     private double valor;
-    private Usuario usuario;
-    private CartaoDeCredito cartao;
-    private CompraDAO compraDAO = new CompraDAO();
+    private Cliente usuario;
+    private CartaoCredito cartao;
+    // private CompraDAO compraDAO = new CompraDAO();
 
     public boolean confirmarCompra(int cvv) {
         return this.cartao.getCvv() == cvv;
     }
 
-    public void realizarCompra(Usuario usuario, CartaoDeCredito cartao, int cvv, double valor) throws CompraException {
-        if (usuario == null || !usuario.isLogado()) {
+    public void realizarCompra(Cliente usuario, CartaoCredito cartao, int cvv, double valor) throws CompraException {
+        if (usuario == null) {
             throw new CompraException("Usuário não está logado.");
         }
         if (cartao == null) {
@@ -24,10 +26,10 @@ public class Compra {
         }
 
         Compra compra = new Compra(id, valor, usuario, cartao);
-        compraDAO.salvarCompraDAO(compra);
+        // compraDAO.salvarCompraDAO(compra);
     }
 
-    public Compra(int id, double valor, Usuario usuario, CartaoDeCredito cartao) {
+    public Compra(int id, double valor, Cliente usuario, CartaoCredito cartao) {
         super();
         this.id = id;
         this.valor = valor;
@@ -52,19 +54,19 @@ public class Compra {
         this.valor = valor;
     }
 
-    public Usuario getUsuario() {
+    public Cliente getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(Usuario usuario) {
+    public void setUsuario(Cliente usuario) {
         this.usuario = usuario;
     }
 
-    public CartaoDeCredito getCartao() {
+    public CartaoCredito getCartao() {
         return cartao;
     }
 
-    public void setCartao(CartaoDeCredito cartao) {
+    public void setCartao(CartaoCredito cartao) {
         this.cartao = cartao;
     }
 }

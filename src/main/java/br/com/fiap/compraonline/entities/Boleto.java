@@ -1,15 +1,14 @@
 package br.com.fiap.compraonline.entities;
 
 import br.com.fiap.compraonline.exceptions.PagamentoException;
-
 import java.util.Random;
 
 public class Boleto extends Pagamento {
 
     private String codigoBarras;
 
-    public Boleto(double valor, int idCliente, int tipoPagamento) {
-        super(valor, idCliente, tipoPagamento);
+    public Boleto(double valor, int idCliente) throws PagamentoException {
+        super(valor, idCliente, 3);
     }
 
     @Override
@@ -45,7 +44,6 @@ public class Boleto extends Pagamento {
     public String getCodigoBarras() {
         return codigoBarras;
     }
-
     public void setCodigoBarras(String codigoBarras) {
         this.codigoBarras = codigoBarras;
     }
