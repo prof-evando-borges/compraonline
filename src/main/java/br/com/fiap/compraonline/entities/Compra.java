@@ -1,19 +1,21 @@
 package br.com.fiap.compraonline.entities;
 
 
+import br.com.fiap.compraonline.exceptions.CompraException;
+
 public class Compra {
     private int id;
     private double valor;
-   // private Usuario usuario;
-   // private CartaoDeCredito cartao;
+   // private Cliente cliente;
+   // private CartaoCredito cartao;
    // private CompraDAO compraDAO = new CompraDAO();
 
    /* public boolean confirmarCompra(int cvv) {
         return this.cartao.getCvv() == cvv;
     }
-
-    public void realizarCompra(Usuario usuario, CartaoDeCredito cartao, int cvv, double valor) throws CompraException {
-        if (usuario == null || !usuario.isLogado()) {
+    */
+    public void realizarCompra(Cliente cliente, CartaoCredito cartao, int cvv, double valor) throws CompraException {
+        if (cliente == null) {
             throw new CompraException("Usuário não está logado.");
         }
         if (cartao == null) {
@@ -22,12 +24,13 @@ public class Compra {
         if (cartao.getCvv() != cvv) {
             throw new CompraException("CVV inválido.");
         }
-
-        Compra compra = new Compra(id, valor, usuario, cartao);
+        /*
+        Compra compra = new Compra(id, valor, cliente, cartao);
         compraDAO.salvarCompraDAO(compra);
-    }*/
+        */
+    }
 
-   /* public Compra(int id, double valor, Usuario usuario, CartaoDeCredito cartao) {
+   /* public Compra(int id, double valor, Cliente cliente, CartaoDeCredito cartao) {
         super();
         this.id = id;
         this.valor = valor;
