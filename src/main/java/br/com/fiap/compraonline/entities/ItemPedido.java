@@ -3,11 +3,15 @@ package br.com.fiap.compraonline.entities;
 import java.math.BigDecimal;
 
 public class ItemPedido {
+    private Long pedidoId;  // Campo adicionado para FK
     private String produtoId;
     private int quantidade;
     private BigDecimal precoUnitario;
 
     // Getters e Setters
+    public Long getPedidoId() { return pedidoId; }
+    public void setPedidoId(Long pedidoId) { this.pedidoId = pedidoId; }
+
     public String getProdutoId() { return produtoId; }
     public void setProdutoId(String produtoId) { this.produtoId = produtoId; }
 
