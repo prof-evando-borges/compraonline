@@ -7,7 +7,7 @@ import java.util.Random;
 
 
 
-public abstract class Pagamento {
+public class Pagamento {
 
     protected int id;
     protected int idCliente;
@@ -18,7 +18,7 @@ public abstract class Pagamento {
 
     public Pagamento() {}
 
-    public abstract boolean processarPagamento() throws PagamentoException;
+    //public abstract boolean processarPagamento() throws PagamentoException;
 
     public Pagamento(double valor, int idCliente, int tipoPagamento) {
         this.id = gerarIdUnico();
