@@ -30,10 +30,10 @@ public class PedidoController {
 
     @GetMapping("/{id}")
     public Pedido buscarPorId(@PathVariable Long id) {
-        return pedidosMock.stream()
-                .filter(p -> p.getId().equals(id))
-                .findFirst()
-                .orElseThrow(() -> new PedidoNaoEncontradoException(id));
+        return null;//pedidosMock.stream()
+               // .filter(p -> p.getId().equals(id))
+              //  .findFirst()
+              //  .orElseThrow(() -> new PedidoNaoEncontradoException(id));
     }
 
     @PutMapping("/{id}")
