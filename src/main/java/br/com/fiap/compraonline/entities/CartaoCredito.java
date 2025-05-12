@@ -54,7 +54,7 @@ public class CartaoCredito extends Pagamento {
 
     // MÉTODO HERDADO
 
-    @Override
+  //  @Override
     public boolean processarPagamento() throws PagamentoException {
         System.out.println("\n🔹 Processando pagamento via Cartão de Crédito...");
         if (numero.length() == 16 && cvv >= 100 && cvv <= 999) {

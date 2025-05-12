@@ -12,7 +12,11 @@ public class Pix extends Pagamento {
         super(valor, idCliente, 2);
     }
 
+
     @Override
+
+    //@Override
+
     public boolean processarPagamento() throws PagamentoException {
 
         if (valor <= 0) {

@@ -6,16 +6,28 @@ import br.com.fiap.compraonline.exceptions.CompraException;
 public class Compra {
     private int id;
     private double valor;
+
     private Cliente usuario;
     private CartaoCredito cartao;
     // private CompraDAO compraDAO = new CompraDAO();
 
-    public boolean confirmarCompra(int cvv) {
+   // private Cliente cliente;
+   // private CartaoCredito cartao;
+   // private CompraDAO compraDAO = new CompraDAO();
+
+
+   /* public boolean confirmarCompra(int cvv) {
         return this.cartao.getCvv() == cvv;
     }
 
+
     public void realizarCompra(Cliente usuario, CartaoCredito cartao, int cvv, double valor) throws CompraException {
         if (usuario == null) {
+
+    */
+    public void realizarCompra(Cliente cliente, CartaoCredito cartao, int cvv, double valor) throws CompraException {
+        if (cliente == null) {
+
             throw new CompraException("Usuário não está logado.");
         }
         if (cartao == null) {
@@ -25,17 +37,27 @@ public class Compra {
             throw new CompraException("CVV inválido.");
         }
 
+
         Compra compra = new Compra(id, valor, usuario, cartao);
         // compraDAO.salvarCompraDAO(compra);
     }
 
     public Compra(int id, double valor, Cliente usuario, CartaoCredito cartao) {
+
+        /*
+        Compra compra = new Compra(id, valor, cliente, cartao);
+        compraDAO.salvarCompraDAO(compra);
+        */
+    }
+
+   /* public Compra(int id, double valor, Cliente cliente, CartaoDeCredito cartao) {
+
         super();
         this.id = id;
         this.valor = valor;
         this.usuario = usuario;
         this.cartao = cartao;
-    }
+    }*/
 
 
     public Compra() {
@@ -53,6 +75,7 @@ public class Compra {
     public void setValor(double valor) {
         this.valor = valor;
     }
+
 
     public Cliente getUsuario() {
         return usuario;

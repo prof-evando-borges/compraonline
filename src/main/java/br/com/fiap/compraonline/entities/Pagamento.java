@@ -5,7 +5,13 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Random;
 
+
 public abstract class Pagamento {
+
+
+
+public class Pagamento {
+
 
     protected int id;
     protected Cliente cliente;
@@ -16,7 +22,7 @@ public abstract class Pagamento {
     protected String status;
     private List<Pagamento> pagamentos;
 
-    public abstract boolean processarPagamento() throws PagamentoException;
+    //public abstract boolean processarPagamento() throws PagamentoException;
 
     public Pagamento(double valor, int idCliente, int tipoPagamento) throws PagamentoException {
         this.id = gerarIdUnico();
