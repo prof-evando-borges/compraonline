@@ -5,8 +5,13 @@ public class HistoricoCompra {
     private int idUsuario;
 
     public void visualizarCompras() {
+
+        // HistoricoCompraDAO dao = new HistoricoCompraDAO();
+        // dao.visualizarCompra(this);
+
       //  HistoricoCompraDAO dao = new HistoricoCompraDAO();
      //   dao.visualizarCompra(this);
+
     }
 
     public HistoricoCompra(int idUsuario) {

@@ -8,6 +8,13 @@ public class Cliente {
     private String telefone;
     private String documento;
 
+
+    public Cliente() {
+
+    }
+
+
+
     public Cliente(String id, String nome, String email, String senha, String telefone, String documento) {
         this.id = id;
         this.nome = nome;
@@ -36,4 +43,5 @@ public class Cliente {
     public String getDocumento() { return documento; }
     public void setDocumento(String documento) { this.documento = documento; }
 }
+
 
